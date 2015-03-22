@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>specflow.plugins.codedui</id>
+        <version>1.0.26-alpha</version>
+        <authors>Fabricio Correa Duarte</authors>
+        <owners>Fabricio Correa Duarte</owners>
+        <licenseUrl>https://raw.githubusercontent.com/fabriciocduarte/specflow.plugins.codedui/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/fabriciocduarte/specflow.plugins.codedui</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Coded UI plug-in for SpecFlow</description>
+        <language>en-US</language>
+      <dependencies>
+        <dependency id="SpecFlow" version="[1.9.0]" />
+      </dependencies>
+    </metadata>
+    <files>
+      <file src="SpecFlow.Plugins.CodedUi\bin\Release\CodedUi.Generator.SpecFlowPlugin.dll" target="content" />
+      <file src="SpecFlow.Plugins.CodedUi\Deployment\App.config.install.xdt" target="content" />
+      <file src="SpecFlow.Plugins.CodedUi\Deployment\App.config.uninstall.xdt" target="content" />      
+    </files>
+</package>

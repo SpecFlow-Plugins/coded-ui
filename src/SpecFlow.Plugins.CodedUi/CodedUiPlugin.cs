@@ -1,4 +1,4 @@
-The MIT License (MIT)
+﻿/* The MIT License (MIT)
 
 Copyright (c) 2015 Fabricio Correa Duarte
 
@@ -20,3 +20,28 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+*/
+
+namespace CodedUi.Generator.SpecFlowPlugin
+{
+    using TechTalk.SpecFlow.Generator.Plugins;
+    using TechTalk.SpecFlow.Generator.UnitTestProvider;
+    using TechTalk.SpecFlow.UnitTestProvider;
+
+    public class CodedUiPlugin : IGeneratorPlugin
+    {
+        #region IGeneratorPlugin Members
+
+        public void RegisterConfigurationDefaults(TechTalk.SpecFlow.Generator.Configuration.SpecFlowProjectConfiguration specFlowConfiguration) { }
+
+        public void RegisterCustomizations(BoDi.ObjectContainer container, TechTalk.SpecFlow.Generator.Configuration.SpecFlowProjectConfiguration generatorConfiguration)
+        {
+            container.RegisterTypeAs<CodedUIGeneratorProvider, IUnitTestGeneratorProvider>();
+            container.RegisterTypeAs<MsTest2010RuntimeProvider, IUnitTestRuntimeProvider>();
+        }
+
+        public void RegisterDependencies(BoDi.ObjectContainer container) { }
+
+        #endregion
+    }
+}
