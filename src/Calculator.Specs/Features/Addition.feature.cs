@@ -19,7 +19,6 @@ namespace Calculator.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UITesting.CodedUITestAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute("CodedUi.Generator.SpecFlowPlugin.dll")]
     public partial class AdditionFeature
     {
         
