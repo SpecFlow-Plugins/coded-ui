@@ -15,7 +15,7 @@
       </dependencies>
     </metadata>
     <files>
-      <file src="SpecFlow.Plugins.CodedUi\bin\Release\CodedUi.Generator.SpecFlowPlugin.dll" target="content" />
+      <file src="SpecFlow.Plugins.CodedUi\bin\CodedUi.Generator.SpecFlowPlugin.dll" target="content" />
       <file src="SpecFlow.Plugins.CodedUi\Deployment\App.config.install.xdt" target="content" />
       <file src="SpecFlow.Plugins.CodedUi\Deployment\App.config.uninstall.xdt" target="content" />      
     </files>
