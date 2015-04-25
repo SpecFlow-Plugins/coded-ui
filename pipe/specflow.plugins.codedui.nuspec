@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>specflow.plugins.codedui</id>
-        <version>1.0.26-alpha</version>
+        <version>1.0.0-beta</version>
         <authors>Fabricio Correa Duarte</authors>
         <owners>Fabricio Correa Duarte</owners>
         <licenseUrl>https://raw.githubusercontent.com/fabriciocduarte/specflow.plugins.codedui/master/LICENSE</licenseUrl>
