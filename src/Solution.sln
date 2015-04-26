@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "Specflow.Plugins.CodedUi\Plugin.csproj", "{9C582AC8-9EEA-462A-B946-3EDEFAE89867}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C558E635-5054-44F3-BC32-427563ABA972}"
-	ProjectSection(SolutionItems) = preProject
-		TestSettings.testsettings = TestSettings.testsettings
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{4648B769-AA67-43B6-BBFC-23C5E48B1195}"
 EndProject

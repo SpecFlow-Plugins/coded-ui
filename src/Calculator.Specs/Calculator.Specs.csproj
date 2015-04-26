@@ -91,6 +91,9 @@
       <LastGenOutput>Addition.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Specs.testsettings">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="UI\Adder.uitest" />
   </ItemGroup>
   <Choose>
