@@ -1,2 +1,2 @@
-Welcome to Coded-UI SpecFlow's plug-in documentation!
-=====================================================
+Welcome to Coded-UI SpecFlow's plug-in!
+=======================================
