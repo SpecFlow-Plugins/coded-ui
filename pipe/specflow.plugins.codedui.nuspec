@@ -6,6 +6,7 @@
         <authors>Fabricio Correa Duarte</authors>
         <owners>Fabricio Correa Duarte</owners>
         <licenseUrl>https://raw.github.com/SpecFlow-Plugins/coded-ui/master/LICENSE</licenseUrl>
+		<iconUrl>https://raw.githubusercontent.com/SpecFlow-Plugins/coded-ui/master/src/logo.png</iconUrl>
         <projectUrl>https://github.com/SpecFlow-Plugins/coded-ui</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Coded UI plug-in for SpecFlow</description>
