@@ -9,6 +9,7 @@
 		<iconUrl>https://raw.githubusercontent.com/SpecFlow-Plugins/coded-ui/master/src/logo.png</iconUrl>
         <projectUrl>https://github.com/SpecFlow-Plugins/coded-ui</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <summary>This project enables the execution of Coded-UI operations from within SpecFlow's step definitions.</summary>
         <description>Coded UI plug-in for SpecFlow</description>
         <language>en-US</language>
       <dependencies>
