@@ -1,24 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
-    <metadata>
-        <id>specflow.plugins.codedui</id>
-        <version>1.0.0-beta</version>
-        <authors>Fabricio Correa Duarte</authors>
-        <owners>Fabricio Correa Duarte</owners>
-        <licenseUrl>https://raw.github.com/SpecFlow-Plugins/coded-ui/master/LICENSE</licenseUrl>
-		<iconUrl>https://raw.githubusercontent.com/SpecFlow-Plugins/coded-ui/master/src/logo.png</iconUrl>
-        <projectUrl>https://github.com/SpecFlow-Plugins/coded-ui</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <summary>This project enables the execution of Coded-UI operations from within SpecFlow's step definitions.</summary>
-        <description>Coded UI plug-in for SpecFlow</description>
-        <language>en-US</language>
-      <dependencies>
-        <dependency id="SpecFlow" version="[1.9.0]" />
-      </dependencies>
-    </metadata>
-    <files>
-      <file src="src\SpecFlow.Plugins.CodedUi\bin\CodedUi.Generator.SpecFlowPlugin.dll" target="content" />
-      <file src="pipe\App.config.install.xdt" target="content" />
-      <file src="pipe\App.config.uninstall.xdt" target="content" />      
-    </files>
+  <metadata>
+    <id>specflow.plugins.codedui</id>
+    <version>1.0.0-beta</version>
+    <authors>Fabricio Correa Duarte</authors>
+    <owners>Fabricio Correa Duarte</owners>
+    <licenseUrl>https://raw.github.com/SpecFlow-Plugins/coded-ui/master/LICENSE</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/SpecFlow-Plugins/coded-ui/master/src/logo.png</iconUrl>
+    <projectUrl>https://github.com/SpecFlow-Plugins/coded-ui</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>This project enables the execution of Coded-UI operations from within SpecFlow's step definitions.</summary>
+    <description>Coded UI plug-in for SpecFlow</description>
+    <language>en-US</language>
+    <releaseNotes>Moved support to specflow 2.1.0 incurring lowest .net framework 4.5</releaseNotes>
+    <dependencies>
+      <dependency id="SpecFlow" version="[2.1.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="src\SpecFlow.Plugins.CodedUi\bin\CodedUi.Generator.SpecFlowPlugin.dll" target="content" />
+    <file src="pipe\App.config.install.xdt" target="content" />
+    <file src="pipe\App.config.uninstall.xdt" target="content" />
+  </files>
 </package>

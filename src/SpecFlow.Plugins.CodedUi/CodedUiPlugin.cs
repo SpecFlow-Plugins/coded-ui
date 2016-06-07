@@ -30,18 +30,15 @@ namespace CodedUi.Generator.SpecFlowPlugin
 
     public class CodedUiPlugin : IGeneratorPlugin
     {
-        #region IGeneratorPlugin Members
-
-        public void RegisterConfigurationDefaults(TechTalk.SpecFlow.Generator.Configuration.SpecFlowProjectConfiguration specFlowConfiguration) { }
-
-        public void RegisterCustomizations(BoDi.ObjectContainer container, TechTalk.SpecFlow.Generator.Configuration.SpecFlowProjectConfiguration generatorConfiguration)
+        public void Initialize(GeneratorPluginEvents generatorPluginEvents, GeneratorPluginParameters generatorPluginParameters)
         {
-            container.RegisterTypeAs<CodedUIGeneratorProvider, IUnitTestGeneratorProvider>();
-            container.RegisterTypeAs<MsTest2010RuntimeProvider, IUnitTestRuntimeProvider>();
+            generatorPluginEvents.CustomizeDependencies += GeneratorPluginEvents_CustomizeDependencies;
         }
 
-        public void RegisterDependencies(BoDi.ObjectContainer container) { }
-
-        #endregion
+        private void GeneratorPluginEvents_CustomizeDependencies(object sender, CustomizeDependenciesEventArgs e)
+        {
+            e.ObjectContainer.RegisterTypeAs<CodedUIGeneratorProvider, IUnitTestGeneratorProvider>();
+            e.ObjectContainer.RegisterTypeAs<MsTest2010RuntimeProvider, IUnitTestRuntimeProvider>();
+        }
     }
 }
