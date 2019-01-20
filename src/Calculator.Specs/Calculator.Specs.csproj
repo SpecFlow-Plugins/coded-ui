@@ -76,8 +76,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Addition.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\MSTestContext.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSTestContext.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\AdditionSteps.cs" />
+    <Compile Include="Steps\MSTestContextSteps.cs" />
     <Compile Include="UI\Adder.cs">
       <DependentUpon>Adder.uitest</DependentUpon>
     </Compile>
@@ -92,6 +98,10 @@
     <None Include="Features\Addition.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Addition.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\MSTestContext.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MSTestContext.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Specs.testsettings">

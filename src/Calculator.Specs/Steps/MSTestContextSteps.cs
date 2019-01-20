@@ -22,25 +22,22 @@ SOFTWARE.
 
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Calculator
+namespace Calculator.Specs.Steps
 {
-    static class Program
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using TechTalk.SpecFlow;
+
+    [Binding]
+    public class MSTestContextSteps
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        [When(@"this scenario is generated")]
+        public void WhenThisScenarioIsGenerated() { }
+
+        [Then(@"the scenario context contains a key of MSTestContext")]
+        public void ThenTheScenarioContextContainsAKeyOfMSTestContext()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Assert.IsTrue(ScenarioContext.Current.ContainsKey("MSTestContext"));
         }
+
     }
 }

@@ -24,7 +24,6 @@ SOFTWARE.
 
 namespace CodedUi.Generator.SpecFlowPlugin
 {
-    using System;
     using System.CodeDom;
     using TechTalk.SpecFlow.Generator;
     using TechTalk.SpecFlow.Generator.UnitTestProvider;
@@ -41,6 +40,8 @@ namespace CodedUi.Generator.SpecFlowPlugin
         public override void SetTestClass(TestClassGenerationContext generationContext, string featureTitle, string featureDescription)
         {
             base.SetTestClass(generationContext, featureTitle, featureDescription);
+
+            // Remove TestClass attribute
             foreach (CodeAttributeDeclaration declaration in generationContext.TestClass.CustomAttributes)
             {
                 if (declaration.Name == TestClassAttribute)
@@ -49,8 +50,51 @@ namespace CodedUi.Generator.SpecFlowPlugin
                     break;
                 }
             }
+
+            // Add CodedUITest attribute to class
             generationContext.TestClass.CustomAttributes.Add(new CodeAttributeDeclaration(new CodeTypeReference(CodedUiTestClassAttribute)));
         }
 
+        public override void FinalizeTestClass(TestClassGenerationContext generationContext)
+        {
+            base.FinalizeTestClass(generationContext);
+
+            var msTestContextGeneration =
+                new CodeExpressionStatement(
+                    new CodeMethodInvokeExpression(
+                        new CodeTypeReferenceExpression("testRunner.ScenarioContext"),
+                        "Add",
+                        new CodeExpression[]
+                        {
+                            new CodePrimitiveExpression("MSTestContext"),
+                            new CodeArgumentReferenceExpression("TestContext")
+                        }));
+
+            generationContext.ScenarioInitializeMethod.Statements.Add(msTestContextGeneration);
+            var msTestAssignment =
+                new CodeAssignStatement(
+                    new CodeVariableReferenceExpression("myTestContext"),
+                    new CodeVariableReferenceExpression("testContext"));
+            generationContext.TestClassInitializeMethod.Statements.Add(msTestAssignment);
+            var mstestContextFiled = new CodeMemberField
+            {
+                Attributes = MemberAttributes.Private | MemberAttributes.Static | MemberAttributes.Final,
+                Name = "myTestContext",
+                Type = new CodeTypeReference(TESTCONTEXT_TYPE),
+            };
+
+            generationContext.TestClass.Members.Add(mstestContextFiled);
+
+            var mstestContextProperty = new CodeMemberProperty();
+            mstestContextProperty.Name = "TestContext";
+            mstestContextProperty.Type = new CodeTypeReference(TESTCONTEXT_TYPE);
+            mstestContextProperty.Attributes =
+                      (mstestContextProperty.Attributes & ~MemberAttributes.AccessMask) |
+                         MemberAttributes.Public;
+            mstestContextProperty.GetStatements.Add(new CodeMethodReturnStatement(new CodeVariableReferenceExpression("myTestContext")));
+            mstestContextProperty.SetStatements.Add(new CodeAssignStatement(new CodeVariableReferenceExpression("myTestContext"), new CodePropertySetValueReferenceExpression()));
+
+            generationContext.TestClass.Members.Add(mstestContextProperty);
+        }
     }
 }
